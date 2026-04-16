@@ -83,5 +83,22 @@ function initDrumKit() {
     console.log(`Drum kit initialized with ${drumPads.length} pads`);
 }
 
+/**
+ * Handle keyboard press event
+ * @param {KeyboardEvent} event - The keyboard event
+ */
+function handleKeyPress(event) {
+    const key = event.key.toLowerCase();
+    const soundName = keyMap[key];
+    
+    if (soundName) {
+        const pad = document.querySelector(`[data-key="${key}"]`);
+        if (pad) {
+            playSound(soundName);
+            addVisualFeedback(pad);
+        }
+    }
+}
+
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', initDrumKit);
