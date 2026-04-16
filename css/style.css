@@ -55,6 +55,8 @@ h1 {
     transition: all 0.2s ease;
     backdrop-filter: blur(10px);
     user-select: none;
+    position: relative;
+    overflow: hidden;
 }
 
 .drum-pad:hover {
