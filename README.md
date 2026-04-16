@@ -255,3 +255,50 @@ Press the following keys to play drum sounds:
 - 🔊 Adjust volume before recording
 - ⚡ Rapid key presses work smoothly (no lag)
 
+
+## 📁 Project Structure
+
+```
+js-drum-kit/
+│
+├── index.html                 # Main HTML file
+├── README.md                  # Project documentation
+├── LICENSE                    # MIT License
+│
+├── css/
+│   └── style.css             # All styles and responsive design
+│
+├── js/
+│   ├── script.js             # Main application code
+│   ├── performance-notes.md  # Performance documentation
+│   └── code-quality.md       # Code quality standards
+│
+├── assets/
+│   ├── sounds/               # Drum sound files
+│   │   ├── kick.mp3
+│   │   ├── snare.mp3
+│   │   ├── hihat.mp3
+│   │   ├── tom.mp3
+│   │   ├── clap.mp3
+│   │   ├── ride.mp3
+│   │   ├── electronic/       # Electronic sound pack
+│   │   └── acoustic/         # Acoustic sound pack
+│   │
+│   └── screenshots/          # Project screenshots
+│       ├── desktop.png
+│       ├── tablet.png
+│       └── mobile.png
+│
+└── .gitignore                # Git ignore file
+```
+
+### File Descriptions
+
+| File/Folder | Description |
+|-------------|-------------|
+| `index.html` | Main HTML structure with semantic markup |
+| `css/style.css` | Complete styling including responsive breakpoints |
+| `js/script.js` | Modular JavaScript with 6 main modules |
+| `assets/sounds/` | Audio files for drum sounds |
+| `assets/screenshots/` | Project screenshots for documentation |
+
