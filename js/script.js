@@ -11,17 +11,20 @@ const sounds = {
     ride: 'assets/sounds/ride.mp3'
 };
 
-// Function to play sound
+// Function to play sound with error handling
 function playSound(soundName) {
     const audio = document.getElementById(soundName);
     
-    if (audio) {
-        // Reset audio to start if already playing
-        audio.currentTime = 0;
-        audio.play().catch(error => {
-            console.error(`Error playing ${soundName}:`, error);
-        });
+    if (!audio) {
+        console.error(`Audio element not found: ${soundName}`);
+        return;
     }
+    
+    // Reset audio to start if already playing
+    audio.currentTime = 0;
+    audio.play().catch(error => {
+        console.error(`Error playing ${soundName}:`, error);
+    });
 }
 
 // Add click event listeners to drum pads
