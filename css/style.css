@@ -23,3 +23,12 @@ h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     text-align: center;
 }
+
+/* Drum Container - CSS Grid Layout */
+.drum-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 600px;
+    width: 100%;
+}
