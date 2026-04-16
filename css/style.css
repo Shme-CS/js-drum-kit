@@ -54,3 +54,19 @@ h1 {
     border-color: rgba(255, 255, 255, 0.5);
     transform: translateY(-2px);
 }
+
+/* Key Display */
+.key {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+/* Sound Name */
+.sound {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.8);
+}
