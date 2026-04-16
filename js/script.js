@@ -47,6 +47,9 @@ function playSound(soundName) {
     // Apply master volume
     audio.volume = masterVolume;
     
+    
+    // Record if recording is active
+    recordBeat(soundName);
     audio.play().catch(error => {
         console.error(`Error playing ${soundName}:`, error);
     });
