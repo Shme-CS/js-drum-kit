@@ -379,3 +379,85 @@ const SoundPackManager = {
         return state.currentSoundPack;
     }
 };
+
+// ============================================================================
+// EVENT HANDLERS MODULE
+// ============================================================================
+
+/**
+ * Event Handlers
+ * Centralized event handling logic
+ */
+const EventHandlers = {
+    /**
+     * Handle drum pad click
+     * @param {Event} event - Click event
+     */
+    handleDrumClick(event) {
+        const pad = event.currentTarget;
+        const soundName = pad.getAttribute('data-sound');
+        
+        if (!soundName) return;
+        
+        console.log(`Drum pad clicked: ${soundName}`);
+        
+        // Play sound and show visual feedback
+        if (AudioManager.playSound(soundName)) {
+            VisualFeedback.trigger(soundName);
+            RecordingManager.recordBeat(soundName);
+        }
+    },
+
+    /**
+     * Handle keyboard press
+     * @param {KeyboardEvent} event - Keyboard event
+     */
+    handleKeyPress(event) {
+        // Ignore if typing in input fields
+        if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
+            return;
+        }
+        
+        // Ignore repeated keydown events
+        if (event.repeat) {
+            return;
+        }
+        
+        const key = event.key.toLowerCase();
+        const soundName = KEY_MAP[key];
+        
+        if (soundName) {
+            event.preventDefault();
+            console.log(`Key pressed: ${key} -> ${soundName}`);
+            
+            // Play sound and show visual feedback
+            if (AudioManager.playSound(soundName)) {
+                VisualFeedback.trigger(soundName);
+                RecordingManager.recordBeat(soundName);
+            }
+        }
+    },
+
+    /**
+     * Handle volume slider change
+     * @param {Event} event - Input event
+     */
+    handleVolumeChange(event) {
+        const volume = parseInt(event.target.value);
+        const volumeValue = document.getElementById('volume-value');
+        
+        AudioManager.setMasterVolume(volume / 100);
+        
+        if (volumeValue) {
+            volumeValue.textContent = `${volume}%`;
+        }
+    },
+
+    /**
+     * Handle sound pack selection change
+     * @param {Event} event - Change event
+     */
+    handleSoundPackChange(event) {
+        SoundPackManager.switchPack(event.target.value);
+    }
+};
