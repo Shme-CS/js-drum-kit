@@ -178,3 +178,37 @@ h1 {
 .drum-pad:active {
     transform: scale(0.92);
 }
+
+/* Key Display - Responsive */
+.key {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.2);
+    padding: clamp(0.4rem, 2vw, 0.6rem) clamp(0.6rem, 3vw, 0.9rem);
+    border-radius: 6px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.1s ease;
+}
+
+.drum-pad.playing .key {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+/* Sound Name - Responsive */
+.sound {
+    font-size: clamp(0.75rem, 2vw, 0.9rem);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.1s ease;
+}
+
+.drum-pad.playing .sound {
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
