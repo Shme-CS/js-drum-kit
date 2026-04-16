@@ -106,3 +106,59 @@ Works on all modern browsers that support:
 - Metronome and tempo control
 - Loop playback
 - More sound packs
+
+## Code Architecture
+
+### Modular Design
+
+The application is organized into logical modules:
+
+1. **Audio Manager** - Handles all audio playback operations
+2. **Visual Feedback** - Manages animations and visual effects
+3. **Recording Manager** - Controls recording and playback
+4. **Sound Pack Manager** - Switches between sound collections
+5. **Event Handlers** - Centralized event handling
+6. **Initializer** - Application setup and initialization
+
+### Performance Optimizations
+
+- Optimized audio playback with `currentTime` reset
+- Force reflow for animation restart
+- Centralized state management
+- Efficient event delegation
+- Minimal DOM manipulation
+
+### Code Quality
+
+- Comprehensive JSDoc documentation
+- Consistent naming conventions
+- Modular architecture
+- Error handling and validation
+- Clean, maintainable code
+
+## Development
+
+### Code Structure
+
+```
+js/
+├── script.js              # Main application code
+├── performance-notes.md   # Performance documentation
+└── code-quality.md        # Quality standards
+```
+
+### Adding New Features
+
+1. Create a new module in the appropriate section
+2. Add JSDoc comments for all functions
+3. Update the Initializer if needed
+4. Test thoroughly
+5. Update documentation
+
+### Performance Guidelines
+
+- Keep functions small and focused
+- Avoid unnecessary DOM queries
+- Use event delegation where possible
+- Minimize global variables
+- Profile before optimizing
