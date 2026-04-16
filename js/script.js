@@ -14,7 +14,10 @@ const sounds = {
 // Animation timing constant
 const ANIMATION_DURATION = 150;
 
-// Function to play sound with error handling
+/**
+ * Play a drum sound by name
+ * @param {string} soundName - The name of the sound to play
+ */
 function playSound(soundName) {
     const audio = document.getElementById(soundName);
     
@@ -30,7 +33,10 @@ function playSound(soundName) {
     });
 }
 
-// Function to add visual feedback
+/**
+ * Add visual feedback animation to an element
+ * @param {HTMLElement} element - The element to animate
+ */
 function addVisualFeedback(element) {
     element.classList.add('playing');
     setTimeout(() => {
@@ -38,7 +44,10 @@ function addVisualFeedback(element) {
     }, ANIMATION_DURATION);
 }
 
-// Handle drum pad click
+/**
+ * Handle drum pad click event
+ * @param {Event} event - The click event
+ */
 function handleDrumClick(event) {
     const pad = event.currentTarget;
     const soundName = pad.getAttribute('data-sound');
@@ -47,7 +56,9 @@ function handleDrumClick(event) {
     addVisualFeedback(pad);
 }
 
-// Initialize drum kit
+/**
+ * Initialize the drum kit by attaching event listeners
+ */
 function initDrumKit() {
     const drumPads = document.querySelectorAll('.drum-pad');
     
