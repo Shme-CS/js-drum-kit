@@ -10,31 +10,39 @@
     <h1>JavaScript Drum Kit</h1>
     
     <div class="drum-container">
-        <div class="drum-pad" data-key="a">
+        <div class="drum-pad" data-key="a" data-sound="kick">
             <span class="key">A</span>
             <span class="sound">Kick</span>
         </div>
-        <div class="drum-pad" data-key="s">
+        <div class="drum-pad" data-key="s" data-sound="snare">
             <span class="key">S</span>
             <span class="sound">Snare</span>
         </div>
-        <div class="drum-pad" data-key="d">
+        <div class="drum-pad" data-key="d" data-sound="hihat">
             <span class="key">D</span>
             <span class="sound">Hi-hat</span>
         </div>
-        <div class="drum-pad" data-key="f">
+        <div class="drum-pad" data-key="f" data-sound="tom">
             <span class="key">F</span>
             <span class="sound">Tom</span>
         </div>
-        <div class="drum-pad" data-key="g">
+        <div class="drum-pad" data-key="g" data-sound="clap">
             <span class="key">G</span>
             <span class="sound">Clap</span>
         </div>
-        <div class="drum-pad" data-key="h">
+        <div class="drum-pad" data-key="h" data-sound="ride">
             <span class="key">H</span>
             <span class="sound">Ride</span>
         </div>
     </div>
+    
+    <!-- Audio Elements -->
+    <audio id="kick" src="assets/sounds/kick.mp3"></audio>
+    <audio id="snare" src="assets/sounds/snare.mp3"></audio>
+    <audio id="hihat" src="assets/sounds/hihat.mp3"></audio>
+    <audio id="tom" src="assets/sounds/tom.mp3"></audio>
+    <audio id="clap" src="assets/sounds/clap.mp3"></audio>
+    <audio id="ride" src="assets/sounds/ride.mp3"></audio>
     
     <script src="js/script.js"></script>
 </body>
