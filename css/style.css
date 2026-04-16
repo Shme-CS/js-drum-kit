@@ -98,3 +98,8 @@ h1 {
         padding: 1.5rem;
     }
 }
+
+/* Active state for drum pads */
+.drum-pad:active {
+    transform: scale(0.98);
+}
