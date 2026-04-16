@@ -44,3 +44,30 @@ JavaScript Drum Kit is a feature-rich, browser-based drum machine that allows us
 - **Accessible**: Works on desktop, tablet, and mobile devices
 - **Extensible**: Modular architecture makes it easy to add new features
 
+
+## ✨ Features
+
+### Core Features
+
+- 🎵 **6 Drum Sounds** - Kick, Snare, Hi-hat, Tom, Clap, and Ride
+- ⌨️ **Keyboard Support** - Play drums using A, S, D, F, G, H keys
+- 🖱️ **Mouse/Touch Support** - Click or tap drum pads
+- 🎨 **Visual Feedback** - Animated glow effects when pads are triggered
+- 🔊 **Volume Control** - Adjustable master volume (0-100%)
+
+### Advanced Features
+
+- 🎼 **Sound Pack Switcher** - Choose from Classic, Electronic, or Acoustic drum kits
+- ⏺️ **Recording Mode** - Record your drum patterns with precise timing
+- ▶️ **Playback** - Play back recorded rhythms
+- 🗑️ **Clear Recording** - Reset and start fresh
+- 📱 **Fully Responsive** - Optimized for all screen sizes and devices
+
+### Technical Features
+
+- ⚡ **Optimized Performance** - 60fps animations, minimal latency
+- 🏗️ **Modular Architecture** - Clean, maintainable code structure
+- 📝 **Comprehensive Documentation** - JSDoc comments throughout
+- 🎯 **Touch Optimized** - 44px minimum touch targets
+- 🌐 **Cross-Browser Compatible** - Works on all modern browsers
+
