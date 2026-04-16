@@ -71,3 +71,29 @@ JavaScript Drum Kit is a feature-rich, browser-based drum machine that allows us
 - 🎯 **Touch Optimized** - 44px minimum touch targets
 - 🌐 **Cross-Browser Compatible** - Works on all modern browsers
 
+
+## 🎬 Demo
+
+### Live Demo
+
+👉 **[Try it live here](https://shme-cs.github.io/js-drum-kit/)**
+
+### Screenshots
+
+<div align="center">
+
+#### Desktop View
+![Desktop View](assets/screenshots/desktop.png)
+
+#### Tablet View
+![Tablet View](assets/screenshots/tablet.png)
+
+#### Mobile View
+![Mobile View](assets/screenshots/mobile.png)
+
+</div>
+
+### Video Demo
+
+![Demo GIF](assets/demo.gif)
+
