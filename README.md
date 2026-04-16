@@ -503,3 +503,58 @@ Contributions are welcome! Here's how you can help:
 
 Have an idea? [Open an issue](https://github.com/Shme-CS/js-drum-kit/issues) or submit a pull request!
 
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+### MIT License Summary
+
+```
+MIT License
+
+Copyright (c) 2026 Shme-CS
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+## 📞 Contact
+
+**Shme-CS** - Computer Science Student
+
+- GitHub: [@Shme-CS](https://github.com/Shme-CS)
+- Project Link: [https://github.com/Shme-CS/js-drum-kit](https://github.com/Shme-CS/js-drum-kit)
+
+## 🙏 Acknowledgments
+
+- Sound samples from [Freesound.org](https://freesound.org/)
+- Inspiration from [JavaScript30](https://javascript30.com/)
+- Icons from [Emoji](https://emojipedia.org/)
+- Gradient from [UI Gradients](https://uigradients.com/)
+
+---
+
+<div align="center">
+
+**⭐ Star this repo if you found it helpful!**
+
+Made with ❤️ by [Shme-CS](https://github.com/Shme-CS)
+
+</div>
+
