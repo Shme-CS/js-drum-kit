@@ -335,3 +335,47 @@ const RecordingManager = {
         if (clearBtn) clearBtn.disabled = !hasRecording;
     }
 };
+
+// ============================================================================
+// SOUND PACK MODULE
+// ============================================================================
+
+/**
+ * Sound Pack Manager
+ * Handles switching between different drum sound packs
+ */
+const SoundPackManager = {
+    /**
+     * Switch to a different sound pack
+     * @param {string} packName - Name of the sound pack
+     * @returns {boolean} True if switch was successful
+     */
+    switchPack(packName) {
+        if (!SOUND_PACKS[packName]) {
+            console.error(`Sound pack not found: ${packName}`);
+            return false;
+        }
+        
+        state.currentSoundPack = packName;
+        const pack = SOUND_PACKS[packName];
+        
+        // Update all audio element sources
+        Object.keys(pack).forEach(soundName => {
+            const audio = AudioManager.getAudioElement(soundName);
+            if (audio) {
+                audio.src = pack[soundName];
+            }
+        });
+        
+        console.log(`Switched to ${packName} sound pack`);
+        return true;
+    },
+
+    /**
+     * Get current sound pack name
+     * @returns {string} Current sound pack name
+     */
+    getCurrentPack() {
+        return state.currentSoundPack;
+    }
+};
