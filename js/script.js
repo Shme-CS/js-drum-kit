@@ -88,6 +88,11 @@ function initDrumKit() {
  * @param {KeyboardEvent} event - The keyboard event
  */
 function handleKeyPress(event) {
+    // Ignore if user is typing in an input field
+    if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
+        return;
+    }
+    
     // Prevent default behavior for mapped keys
     const key = event.key.toLowerCase();
     const soundName = keyMap[key];
