@@ -38,16 +38,21 @@ function addVisualFeedback(element) {
     }, ANIMATION_DURATION);
 }
 
+// Handle drum pad click
+function handleDrumClick(event) {
+    const pad = event.currentTarget;
+    const soundName = pad.getAttribute('data-sound');
+    
+    playSound(soundName);
+    addVisualFeedback(pad);
+}
+
 // Add click event listeners to drum pads
 document.addEventListener('DOMContentLoaded', () => {
     const drumPads = document.querySelectorAll('.drum-pad');
     
     drumPads.forEach(pad => {
-        pad.addEventListener('click', () => {
-            const soundName = pad.getAttribute('data-sound');
-            playSound(soundName);
-            addVisualFeedback(pad);
-        });
+        pad.addEventListener('click', handleDrumClick);
     });
     
     console.log('Drum pads loaded and ready!');
