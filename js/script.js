@@ -11,6 +11,9 @@ const sounds = {
     ride: 'assets/sounds/ride.mp3'
 };
 
+// Animation timing constant
+const ANIMATION_DURATION = 150;
+
 // Function to play sound with error handling
 function playSound(soundName) {
     const audio = document.getElementById(soundName);
@@ -40,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             pad.classList.add('playing');
             setTimeout(() => {
                 pad.classList.remove('playing');
-            }, 100);
+            }, ANIMATION_DURATION);
         });
     });
     
