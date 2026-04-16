@@ -410,3 +410,59 @@ const Initializer = {
 - Touch-action optimization
 - High DPI support
 
+
+## 🌐 Browser Support
+
+| Browser | Version | Status |
+|---------|---------|--------|
+| Chrome | 90+ | ✅ Fully Supported |
+| Firefox | 88+ | ✅ Fully Supported |
+| Safari | 14+ | ✅ Fully Supported |
+| Edge | 90+ | ✅ Fully Supported |
+| Opera | 76+ | ✅ Fully Supported |
+
+### Required Features
+
+- CSS Grid Layout
+- ES6 JavaScript
+- HTML5 Audio API
+- CSS Animations
+- Touch Events
+
+## 🤝 Contributing
+
+Contributions are welcome! Here's how you can help:
+
+### How to Contribute
+
+1. **Fork the Project**
+2. **Create your Feature Branch**
+   ```bash
+   git checkout -b feature/AmazingFeature
+   ```
+3. **Commit your Changes**
+   ```bash
+   git commit -m 'Add some AmazingFeature'
+   ```
+4. **Push to the Branch**
+   ```bash
+   git push origin feature/AmazingFeature
+   ```
+5. **Open a Pull Request**
+
+### Contribution Guidelines
+
+- Follow existing code style
+- Add JSDoc comments for new functions
+- Test on multiple devices/browsers
+- Update documentation as needed
+- Keep commits atomic and descriptive
+
+### Code Style
+
+- Use 4 spaces for indentation
+- Use camelCase for variables and functions
+- Use PascalCase for modules
+- Use UPPER_SNAKE_CASE for constants
+- Add comments for complex logic
+
