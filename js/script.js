@@ -30,6 +30,14 @@ function playSound(soundName) {
     });
 }
 
+// Function to add visual feedback
+function addVisualFeedback(element) {
+    element.classList.add('playing');
+    setTimeout(() => {
+        element.classList.remove('playing');
+    }, ANIMATION_DURATION);
+}
+
 // Add click event listeners to drum pads
 document.addEventListener('DOMContentLoaded', () => {
     const drumPads = document.querySelectorAll('.drum-pad');
@@ -38,12 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         pad.addEventListener('click', () => {
             const soundName = pad.getAttribute('data-sound');
             playSound(soundName);
-            
-            // Add visual feedback
-            pad.classList.add('playing');
-            setTimeout(() => {
-                pad.classList.remove('playing');
-            }, ANIMATION_DURATION);
+            addVisualFeedback(pad);
         });
     });
     
