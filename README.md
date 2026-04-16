@@ -97,3 +97,31 @@ JavaScript Drum Kit is a feature-rich, browser-based drum machine that allows us
 
 ![Demo GIF](assets/demo.gif)
 
+
+## 🛠️ Technologies
+
+### Built With
+
+- **HTML5** - Semantic markup and audio elements
+- **CSS3** - Modern styling with Grid, Flexbox, and animations
+- **JavaScript (ES6+)** - Vanilla JS with modular architecture
+
+### Key Technologies & Concepts
+
+| Technology | Purpose |
+|------------|---------|
+| **CSS Grid** | Responsive drum pad layout |
+| **CSS Animations** | Visual feedback and transitions |
+| **Web Audio API** | Audio playback and control |
+| **Event Delegation** | Efficient event handling |
+| **Module Pattern** | Code organization |
+| **JSDoc** | Code documentation |
+| **Responsive Design** | Mobile-first approach |
+| **Touch Events** | Mobile device support |
+
+### Development Tools
+
+- Git & GitHub - Version control
+- VS Code - Code editor
+- Chrome DevTools - Debugging and testing
+
