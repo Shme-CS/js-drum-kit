@@ -54,7 +54,15 @@ function playSound(soundName) {
  * @param {HTMLElement} element - The element to animate
  */
 function addVisualFeedback(element) {
+    // Remove existing class if present
+    element.classList.remove('playing');
+    
+    // Force reflow to restart animation
+    void element.offsetWidth;
+    
+    // Add playing class
     element.classList.add('playing');
+    
     setTimeout(() => {
         element.classList.remove('playing');
     }, ANIMATION_DURATION);
