@@ -1,6 +1,9 @@
 // JavaScript Drum Kit - Audio System
 console.log('Drum Kit initialized');
 
+// Global volume control
+let masterVolume = 0.8;
+
 // Sound mapping object
 const sounds = {
     kick: 'assets/sounds/kick.mp3',
@@ -41,8 +44,8 @@ function playSound(soundName) {
     // Reset audio to start if already playing
     audio.currentTime = 0;
     
-    // Add volume fade in effect
-    audio.volume = 0.8;
+    // Apply master volume
+    audio.volume = masterVolume;
     
     audio.play().catch(error => {
         console.error(`Error playing ${soundName}:`, error);
@@ -83,19 +86,6 @@ function handleDrumClick(event) {
 }
 
 /**
- * Initialize the drum kit by attaching event listeners
- */
-function initDrumKit() {
-    const drumPads = document.querySelectorAll('.drum-pad');
-    
-    drumPads.forEach(pad => {
-        pad.addEventListener('click', handleDrumClick);
-    });
-    
-    console.log(`Drum kit initialized with ${drumPads.length} pads`);
-}
-
-/**
  * Handle keyboard press event
  * @param {KeyboardEvent} event - The keyboard event
  */
@@ -123,6 +113,19 @@ function handleKeyPress(event) {
             addVisualFeedback(pad);
         }
     }
+}
+
+/**
+ * Initialize the drum kit by attaching event listeners
+ */
+function initDrumKit() {
+    const drumPads = document.querySelectorAll('.drum-pad');
+    
+    drumPads.forEach(pad => {
+        pad.addEventListener('click', handleDrumClick);
+    });
+    
+    console.log(`Drum kit initialized with ${drumPads.length} pads`);
 }
 
 // Wait for DOM to load
