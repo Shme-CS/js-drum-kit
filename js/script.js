@@ -127,6 +127,7 @@ function initDrumKit() {
     
     console.log(`Drum kit initialized with ${drumPads.length} pads`);
     initVolumeControl();
+    initSoundPackSelector();
 }
 
 // Wait for DOM to load
@@ -183,3 +184,40 @@ const soundPacks = {
 };
 
 let currentSoundPack = 'classic';
+
+/**
+ * Switch sound pack
+ * @param {string} packName - Name of the sound pack
+ */
+function switchSoundPack(packName) {
+    if (!soundPacks[packName]) {
+        console.error(`Sound pack not found: ${packName}`);
+        return;
+    }
+    
+    currentSoundPack = packName;
+    const pack = soundPacks[packName];
+    
+    // Update audio sources
+    Object.keys(pack).forEach(soundName => {
+        const audio = document.getElementById(soundName);
+        if (audio) {
+            audio.src = pack[soundName];
+        }
+    });
+    
+    console.log(`Switched to ${packName} sound pack`);
+}
+
+/**
+ * Initialize sound pack selector
+ */
+function initSoundPackSelector() {
+    const selector = document.getElementById('sound-pack');
+    
+    if (selector) {
+        selector.addEventListener('change', (e) => {
+            switchSoundPack(e.target.value);
+        });
+    }
+}
