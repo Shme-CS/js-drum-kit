@@ -163,3 +163,56 @@ const AudioManager = {
         console.log(`Master volume set to: ${Math.round(state.masterVolume * 100)}%`);
     }
 };
+
+// ============================================================================
+// VISUAL FEEDBACK MODULE
+// ============================================================================
+
+/**
+ * Visual Feedback Manager
+ * Handles all visual animations and effects
+ */
+const VisualFeedback = {
+    /**
+     * Add playing animation to a drum pad
+     * Forces animation restart for rapid triggering
+     * @param {HTMLElement} element - The drum pad element
+     */
+    addPlayingAnimation(element) {
+        if (!element) return;
+        
+        // Remove existing class to force animation restart
+        element.classList.remove('playing');
+        
+        // Force browser reflow to restart CSS animation
+        void element.offsetWidth;
+        
+        // Add playing class for animation
+        element.classList.add('playing');
+        
+        // Remove class after animation completes
+        setTimeout(() => {
+            element.classList.remove('playing');
+        }, ANIMATION_DURATION);
+    },
+
+    /**
+     * Find drum pad element by sound name
+     * @param {string} soundName - Name of the sound
+     * @returns {HTMLElement|null} Drum pad element or null
+     */
+    getDrumPad(soundName) {
+        return document.querySelector(`[data-sound="${soundName}"]`);
+    },
+
+    /**
+     * Trigger visual feedback for a sound
+     * @param {string} soundName - Name of the sound
+     */
+    trigger(soundName) {
+        const pad = this.getDrumPad(soundName);
+        if (pad) {
+            this.addPlayingAnimation(pad);
+        }
+    }
+};
