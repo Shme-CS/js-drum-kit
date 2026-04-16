@@ -21,7 +21,7 @@ const keyMap = {
     'h': 'ride'
 };
 
-// Animation timing constant
+/* Animation timing constant */
 const ANIMATION_DURATION = 150;
 
 /**
@@ -40,6 +40,10 @@ function playSound(soundName) {
     
     // Reset audio to start if already playing
     audio.currentTime = 0;
+    
+    // Add volume fade in effect
+    audio.volume = 0.8;
+    
     audio.play().catch(error => {
         console.error(`Error playing ${soundName}:`, error);
     });
