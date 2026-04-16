@@ -11,6 +11,16 @@ const sounds = {
     ride: 'assets/sounds/ride.mp3'
 };
 
+// Keyboard to sound mapping
+const keyMap = {
+    'a': 'kick',
+    's': 'snare',
+    'd': 'hihat',
+    'f': 'tom',
+    'g': 'clap',
+    'h': 'ride'
+};
+
 // Animation timing constant
 const ANIMATION_DURATION = 150;
 
