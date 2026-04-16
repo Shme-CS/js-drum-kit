@@ -47,13 +47,16 @@ function handleDrumClick(event) {
     addVisualFeedback(pad);
 }
 
-// Add click event listeners to drum pads
-document.addEventListener('DOMContentLoaded', () => {
+// Initialize drum kit
+function initDrumKit() {
     const drumPads = document.querySelectorAll('.drum-pad');
     
     drumPads.forEach(pad => {
         pad.addEventListener('click', handleDrumClick);
     });
     
-    console.log('Drum pads loaded and ready!');
-});
+    console.log(`Drum kit initialized with ${drumPads.length} pads`);
+}
+
+// Wait for DOM to load
+document.addEventListener('DOMContentLoaded', initDrumKit);
