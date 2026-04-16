@@ -125,3 +125,13 @@ h1 {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.6; }
 }
+
+/* Drum Container - Responsive Grid Layout */
+.drum-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    max-width: 800px;
+    width: 100%;
+    padding: 0 0.5rem;
+}
