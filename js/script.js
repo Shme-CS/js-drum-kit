@@ -126,6 +126,7 @@ function initDrumKit() {
     });
     
     console.log(`Drum kit initialized with ${drumPads.length} pads`);
+    initVolumeControl();
 }
 
 // Wait for DOM to load
@@ -133,3 +134,20 @@ document.addEventListener('DOMContentLoaded', initDrumKit);
 
 // Listen for keyboard events
 document.addEventListener('keydown', handleKeyPress);
+
+/**
+ * Initialize volume control
+ */
+function initVolumeControl() {
+    const volumeSlider = document.getElementById('volume-slider');
+    const volumeValue = document.getElementById('volume-value');
+    
+    if (volumeSlider && volumeValue) {
+        volumeSlider.addEventListener('input', (e) => {
+            const volume = e.target.value;
+            masterVolume = volume / 100;
+            volumeValue.textContent = `${volume}%`;
+            console.log(`Volume set to: ${volume}%`);
+        });
+    }
+}
