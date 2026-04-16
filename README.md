@@ -162,3 +162,38 @@ js/
 - Use event delegation where possible
 - Minimize global variables
 - Profile before optimizing
+
+## Responsive Design
+
+### Device Support
+
+The drum kit is fully responsive and optimized for:
+
+- **Desktop** (1024px+) - Full-featured experience
+- **Tablet** (768px - 1024px) - Optimized grid layout
+- **Mobile** (480px - 768px) - Touch-friendly controls
+- **Small Phones** (< 480px) - Compact layout
+- **Landscape Mode** - Optimized for horizontal viewing
+
+### Touch Optimizations
+
+- Minimum touch target size: 44x44px (Apple guidelines)
+- Tap highlight removal for cleaner interaction
+- Touch-action manipulation for better performance
+- Active state feedback for touch devices
+- Optimized button spacing for fat-finger syndrome
+
+### Responsive Features
+
+- Fluid typography using clamp()
+- Auto-fit grid for flexible layouts
+- Aspect ratio maintained for drum pads
+- Viewport-based sizing
+- Orientation-aware layouts
+
+### Performance
+
+- Hardware-accelerated animations
+- Optimized for 60fps on mobile
+- Minimal reflows and repaints
+- Touch-action for better scrolling
