@@ -461,3 +461,116 @@ const EventHandlers = {
         SoundPackManager.switchPack(event.target.value);
     }
 };
+
+// ============================================================================
+// INITIALIZATION MODULE
+// ============================================================================
+
+/**
+ * Initialization Manager
+ * Handles setup and initialization of all components
+ */
+const Initializer = {
+    /**
+     * Initialize drum pads with click listeners
+     */
+    initDrumPads() {
+        const drumPads = document.querySelectorAll('.drum-pad');
+        
+        drumPads.forEach(pad => {
+            pad.addEventListener('click', EventHandlers.handleDrumClick);
+        });
+        
+        console.log(`Initialized ${drumPads.length} drum pads`);
+    },
+
+    /**
+     * Initialize keyboard controls
+     */
+    initKeyboard() {
+        document.addEventListener('keydown', EventHandlers.handleKeyPress);
+        console.log('Keyboard controls initialized');
+    },
+
+    /**
+     * Initialize volume control
+     */
+    initVolumeControl() {
+        const volumeSlider = document.getElementById('volume-slider');
+        
+        if (volumeSlider) {
+            volumeSlider.addEventListener('input', EventHandlers.handleVolumeChange);
+            console.log('Volume control initialized');
+        }
+    },
+
+    /**
+     * Initialize sound pack selector
+     */
+    initSoundPackSelector() {
+        const selector = document.getElementById('sound-pack');
+        
+        if (selector) {
+            selector.addEventListener('change', EventHandlers.handleSoundPackChange);
+            console.log('Sound pack selector initialized');
+        }
+    },
+
+    /**
+     * Initialize recording controls
+     */
+    initRecordingControls() {
+        const recordBtn = document.getElementById('record-btn');
+        const stopBtn = document.getElementById('stop-btn');
+        const playBtn = document.getElementById('play-btn');
+        const clearBtn = document.getElementById('clear-btn');
+        
+        if (recordBtn) {
+            recordBtn.addEventListener('click', () => RecordingManager.startRecording());
+        }
+        
+        if (stopBtn) {
+            stopBtn.addEventListener('click', () => RecordingManager.stopRecording());
+        }
+        
+        if (playBtn) {
+            playBtn.addEventListener('click', () => RecordingManager.playRecording());
+        }
+        
+        if (clearBtn) {
+            clearBtn.addEventListener('click', () => RecordingManager.clearRecording());
+        }
+        
+        console.log('Recording controls initialized');
+    },
+
+    /**
+     * Initialize all components
+     */
+    initAll() {
+        console.log('='.repeat(60));
+        console.log('Initializing Drum Kit Application...');
+        console.log('='.repeat(60));
+        
+        this.initDrumPads();
+        this.initKeyboard();
+        this.initVolumeControl();
+        this.initSoundPackSelector();
+        this.initRecordingControls();
+        
+        console.log('='.repeat(60));
+        console.log('Drum Kit Ready!');
+        console.log('='.repeat(60));
+    }
+};
+
+// ============================================================================
+// APPLICATION ENTRY POINT
+// ============================================================================
+
+/**
+ * Initialize application when DOM is ready
+ */
+document.addEventListener('DOMContentLoaded', () => {
+    Initializer.initAll();
+});
