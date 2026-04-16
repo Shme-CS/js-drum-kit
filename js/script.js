@@ -216,3 +216,122 @@ const VisualFeedback = {
         }
     }
 };
+
+// ============================================================================
+// RECORDING MODULE
+// ============================================================================
+
+/**
+ * Recording Manager
+ * Handles recording and playback of drum patterns
+ */
+const RecordingManager = {
+    /**
+     * Start recording drum beats
+     */
+    startRecording() {
+        state.isRecording = true;
+        state.recordedBeats = [];
+        state.recordingStartTime = Date.now();
+        
+        this.updateRecordingUI(true);
+        console.log('Recording started');
+    },
+
+    /**
+     * Stop recording drum beats
+     */
+    stopRecording() {
+        state.isRecording = false;
+        this.updateRecordingUI(false);
+        console.log(`Recording stopped. Captured ${state.recordedBeats.length} beats`);
+    },
+
+    /**
+     * Record a beat with timestamp
+     * @param {string} soundName - Name of the sound
+     */
+    recordBeat(soundName) {
+        if (!state.isRecording) return;
+        
+        const timestamp = Date.now() - state.recordingStartTime;
+        state.recordedBeats.push({ soundName, timestamp });
+        console.log(`Recorded: ${soundName} at ${timestamp}ms`);
+    },
+
+    /**
+     * Play back recorded beats
+     */
+    playRecording() {
+        if (state.recordedBeats.length === 0) {
+            console.log('No recording to play');
+            return;
+        }
+        
+        const playBtn = document.getElementById('play-btn');
+        if (playBtn) playBtn.disabled = true;
+        
+        console.log(`Playing ${state.recordedBeats.length} recorded beats...`);
+        
+        // Schedule each beat for playback
+        state.recordedBeats.forEach(beat => {
+            setTimeout(() => {
+                AudioManager.playSound(beat.soundName);
+                VisualFeedback.trigger(beat.soundName);
+            }, beat.timestamp);
+        });
+        
+        // Re-enable play button after playback completes
+        const lastBeat = state.recordedBeats[state.recordedBeats.length - 1];
+        setTimeout(() => {
+            if (playBtn) playBtn.disabled = false;
+            console.log('Playback finished');
+        }, lastBeat.timestamp + 500);
+    },
+
+    /**
+     * Clear recorded beats
+     */
+    clearRecording() {
+        state.recordedBeats = [];
+        this.updatePlaybackUI();
+        console.log('Recording cleared');
+    },
+
+    /**
+     * Update recording UI state
+     * @param {boolean} isRecording - Whether recording is active
+     */
+    updateRecordingUI(isRecording) {
+        const recordBtn = document.getElementById('record-btn');
+        const stopBtn = document.getElementById('stop-btn');
+        
+        if (recordBtn) {
+            if (isRecording) {
+                recordBtn.classList.add('recording');
+            } else {
+                recordBtn.classList.remove('recording');
+            }
+        }
+        
+        if (stopBtn) {
+            stopBtn.disabled = !isRecording;
+        }
+        
+        if (!isRecording) {
+            this.updatePlaybackUI();
+        }
+    },
+
+    /**
+     * Update playback UI state
+     */
+    updatePlaybackUI() {
+        const playBtn = document.getElementById('play-btn');
+        const clearBtn = document.getElementById('clear-btn');
+        const hasRecording = state.recordedBeats.length > 0;
+        
+        if (playBtn) playBtn.disabled = !hasRecording;
+        if (clearBtn) clearBtn.disabled = !hasRecording;
+    }
+};
