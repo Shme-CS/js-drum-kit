@@ -105,6 +105,12 @@ h1 {
     text-transform: uppercase;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.8);
+    transition: all 0.1s ease;
+}
+
+.drum-pad.playing .sound {
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
 /* Responsive Design */
