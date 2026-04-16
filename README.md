@@ -466,3 +466,40 @@ Contributions are welcome! Here's how you can help:
 - Use UPPER_SNAKE_CASE for constants
 - Add comments for complex logic
 
+
+## 🚀 Future Improvements
+
+### Planned Features
+
+- [ ] **Save Recordings** - Export recordings to local storage
+- [ ] **Share Recordings** - Generate shareable links
+- [ ] **More Sound Packs** - Jazz, Rock, Hip-Hop kits
+- [ ] **Metronome** - Built-in tempo guide
+- [ ] **Loop Mode** - Continuous playback
+- [ ] **Tempo Control** - Adjust playback speed
+- [ ] **Visual Waveforms** - Display audio waveforms
+- [ ] **MIDI Support** - Connect MIDI controllers
+- [ ] **Export Audio** - Download recordings as MP3/WAV
+- [ ] **Preset Patterns** - Pre-made drum patterns
+- [ ] **Multi-track Recording** - Layer multiple recordings
+- [ ] **Effects** - Reverb, delay, compression
+- [ ] **Customization** - User-defined key mappings
+- [ ] **Dark/Light Theme** - Theme switcher
+- [ ] **Accessibility** - Screen reader support
+
+### Technical Improvements
+
+- [ ] Web Workers for recording processing
+- [ ] Service Worker for offline support
+- [ ] Audio sprites for faster loading
+- [ ] IndexedDB for persistent storage
+- [ ] WebRTC for real-time collaboration
+- [ ] Progressive Web App (PWA)
+- [ ] TypeScript migration
+- [ ] Unit tests with Jest
+- [ ] E2E tests with Cypress
+
+### Community Requests
+
+Have an idea? [Open an issue](https://github.com/Shme-CS/js-drum-kit/issues) or submit a pull request!
+
