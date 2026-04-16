@@ -221,3 +221,10 @@ function initSoundPackSelector() {
         });
     }
 }
+
+/**
+ * Recording system
+ */
+let isRecording = false;
+let recordedBeats = [];
+let recordingStartTime = 0;
