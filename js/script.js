@@ -95,3 +95,71 @@ const SOUND_PACKS = {
 };
 
 console.log('Drum Kit initialized');
+
+// ============================================================================
+// AUDIO MANAGEMENT MODULE
+// ============================================================================
+
+/**
+ * Audio Manager
+ * Handles all audio-related operations
+ */
+const AudioManager = {
+    /**
+     * Get audio element by sound name
+     * @param {string} soundName - Name of the sound
+     * @returns {HTMLAudioElement|null} Audio element or null if not found
+     */
+    getAudioElement(soundName) {
+        return document.getElementById(soundName);
+    },
+
+    /**
+     * Play a drum sound with current volume
+     * @param {string} soundName - Name of the sound to play
+     * @returns {boolean} True if sound played successfully
+     */
+    playSound(soundName) {
+        const audio = this.getAudioElement(soundName);
+        
+        if (!audio) {
+            console.error(`Audio element not found: ${soundName}`);
+            return false;
+        }
+        
+        // Reset to start for rapid playback
+        audio.currentTime = 0;
+        
+        // Apply master volume
+        audio.volume = state.masterVolume;
+        
+        // Play audio
+        audio.play().catch(error => {
+            console.error(`Error playing ${soundName}:`, error);
+        });
+        
+        console.log(`Playing: ${soundName} at volume ${Math.round(state.masterVolume * 100)}%`);
+        return true;
+    },
+
+    /**
+     * Update volume for a specific audio element
+     * @param {string} soundName - Name of the sound
+     * @param {number} volume - Volume level (0.0 to 1.0)
+     */
+    setVolume(soundName, volume) {
+        const audio = this.getAudioElement(soundName);
+        if (audio) {
+            audio.volume = Math.max(0, Math.min(1, volume));
+        }
+    },
+
+    /**
+     * Update master volume
+     * @param {number} volume - Volume level (0.0 to 1.0)
+     */
+    setMasterVolume(volume) {
+        state.masterVolume = Math.max(0, Math.min(1, volume));
+        console.log(`Master volume set to: ${Math.round(state.masterVolume * 100)}%`);
+    }
+};
