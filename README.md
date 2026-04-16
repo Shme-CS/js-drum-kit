@@ -193,3 +193,65 @@ assets/sounds/
 - [SampleSwap](https://sampleswap.org/)
 - [99Sounds](https://99sounds.org/)
 
+
+## 📖 Usage
+
+### Playing Drums
+
+#### Keyboard Controls
+
+Press the following keys to play drum sounds:
+
+| Key | Drum Sound |
+|-----|------------|
+| `A` | Kick Drum |
+| `S` | Snare |
+| `D` | Hi-hat |
+| `F` | Tom |
+| `G` | Clap |
+| `H` | Ride Cymbal |
+
+#### Mouse/Touch Controls
+
+- Click or tap any drum pad to play the corresponding sound
+- Visual feedback shows which pad is active
+
+### Volume Control
+
+1. Locate the volume slider in the controls panel
+2. Drag the slider left (decrease) or right (increase)
+3. Volume ranges from 0% to 100%
+
+### Switching Sound Packs
+
+1. Find the "Sound Pack" dropdown in the controls panel
+2. Select from:
+   - **Classic** - Traditional drum sounds
+   - **Electronic** - 808/909 style electronic drums
+   - **Acoustic** - Natural acoustic drum kit
+
+### Recording & Playback
+
+#### Recording a Pattern
+
+1. Click the **⏺ Record** button
+2. Play your drum pattern using keyboard or mouse
+3. Click **⏹ Stop** when finished
+
+#### Playing Back
+
+1. After recording, click **▶ Play** to hear your pattern
+2. The visual feedback will replay in sync with the audio
+
+#### Clearing Recording
+
+- Click **🗑 Clear** to delete the current recording
+
+### Tips for Best Experience
+
+- 🎧 Use headphones for better audio quality
+- 🖱️ On desktop, keyboard is faster than mouse
+- 📱 On mobile, use landscape mode for more space
+- 🔊 Adjust volume before recording
+- ⚡ Rapid key presses work smoothly (no lag)
+
