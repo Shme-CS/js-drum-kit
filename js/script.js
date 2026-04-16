@@ -26,6 +26,8 @@ function playSound(soundName) {
         return;
     }
     
+    console.log(`Playing sound: ${soundName}`);
+    
     // Reset audio to start if already playing
     audio.currentTime = 0;
     audio.play().catch(error => {
@@ -51,6 +53,8 @@ function addVisualFeedback(element) {
 function handleDrumClick(event) {
     const pad = event.currentTarget;
     const soundName = pad.getAttribute('data-sound');
+    
+    console.log(`Drum pad clicked: ${soundName}`);
     
     playSound(soundName);
     addVisualFeedback(pad);
