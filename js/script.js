@@ -131,6 +131,7 @@ function initDrumKit() {
     console.log(`Drum kit initialized with ${drumPads.length} pads`);
     initVolumeControl();
     initSoundPackSelector();
+    initRecordingControls();
 }
 
 // Wait for DOM to load
@@ -323,4 +324,32 @@ function clearRecording() {
     if (clearBtn) clearBtn.disabled = true;
     
     console.log('Recording cleared');
+}
+
+/**
+ * Initialize recording controls
+ */
+function initRecordingControls() {
+    const recordBtn = document.getElementById('record-btn');
+    const stopBtn = document.getElementById('stop-btn');
+    const playBtn = document.getElementById('play-btn');
+    const clearBtn = document.getElementById('clear-btn');
+    
+    if (recordBtn) {
+        recordBtn.addEventListener('click', startRecording);
+    }
+    
+    if (stopBtn) {
+        stopBtn.addEventListener('click', stopRecording);
+    }
+    
+    if (playBtn) {
+        playBtn.addEventListener('click', playRecording);
+    }
+    
+    if (clearBtn) {
+        clearBtn.addEventListener('click', clearRecording);
+    }
+    
+    console.log('Recording controls initialized');
 }
