@@ -93,6 +93,11 @@ function handleKeyPress(event) {
         return;
     }
     
+    // Ignore repeated keydown events
+    if (event.repeat) {
+        return;
+    }
+    
     // Prevent default behavior for mapped keys
     const key = event.key.toLowerCase();
     const soundName = keyMap[key];
