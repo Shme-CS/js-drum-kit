@@ -88,10 +88,12 @@ function initDrumKit() {
  * @param {KeyboardEvent} event - The keyboard event
  */
 function handleKeyPress(event) {
+    // Prevent default behavior for mapped keys
     const key = event.key.toLowerCase();
     const soundName = keyMap[key];
     
     if (soundName) {
+        event.preventDefault();
         console.log(`Key pressed: ${key}`);
         const pad = document.querySelector(`[data-key="${key}"]`);
         if (pad) {
