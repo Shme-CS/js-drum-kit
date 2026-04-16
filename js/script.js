@@ -279,3 +279,48 @@ function recordBeat(soundName) {
         console.log(`Recorded: ${soundName} at ${timestamp}ms`);
     }
 }
+
+/**
+ * Play recorded beats
+ */
+function playRecording() {
+    if (recordedBeats.length === 0) {
+        console.log('No recording to play');
+        return;
+    }
+    
+    const playBtn = document.getElementById('play-btn');
+    if (playBtn) playBtn.disabled = true;
+    
+    console.log('Playing recording...');
+    
+    recordedBeats.forEach(beat => {
+        setTimeout(() => {
+            playSound(beat.soundName);
+            const pad = document.querySelector(`[data-sound="${beat.soundName}"]`);
+            if (pad) addVisualFeedback(pad);
+        }, beat.timestamp);
+    });
+    
+    // Re-enable play button after playback
+    const lastBeat = recordedBeats[recordedBeats.length - 1];
+    setTimeout(() => {
+        if (playBtn) playBtn.disabled = false;
+        console.log('Playback finished');
+    }, lastBeat.timestamp + 500);
+}
+
+/**
+ * Clear recorded beats
+ */
+function clearRecording() {
+    recordedBeats = [];
+    
+    const playBtn = document.getElementById('play-btn');
+    const clearBtn = document.getElementById('clear-btn');
+    
+    if (playBtn) playBtn.disabled = true;
+    if (clearBtn) clearBtn.disabled = true;
+    
+    console.log('Recording cleared');
+}
