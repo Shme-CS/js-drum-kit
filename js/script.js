@@ -228,3 +228,51 @@ function initSoundPackSelector() {
 let isRecording = false;
 let recordedBeats = [];
 let recordingStartTime = 0;
+
+/**
+ * Start recording
+ */
+function startRecording() {
+    isRecording = true;
+    recordedBeats = [];
+    recordingStartTime = Date.now();
+    
+    const recordBtn = document.getElementById('record-btn');
+    const stopBtn = document.getElementById('stop-btn');
+    
+    if (recordBtn) recordBtn.classList.add('recording');
+    if (stopBtn) stopBtn.disabled = false;
+    
+    console.log('Recording started');
+}
+
+/**
+ * Stop recording
+ */
+function stopRecording() {
+    isRecording = false;
+    
+    const recordBtn = document.getElementById('record-btn');
+    const stopBtn = document.getElementById('stop-btn');
+    const playBtn = document.getElementById('play-btn');
+    const clearBtn = document.getElementById('clear-btn');
+    
+    if (recordBtn) recordBtn.classList.remove('recording');
+    if (stopBtn) stopBtn.disabled = true;
+    if (playBtn) playBtn.disabled = recordedBeats.length === 0;
+    if (clearBtn) clearBtn.disabled = recordedBeats.length === 0;
+    
+    console.log(`Recording stopped. Recorded ${recordedBeats.length} beats`);
+}
+
+/**
+ * Record a beat
+ * @param {string} soundName - Name of the sound
+ */
+function recordBeat(soundName) {
+    if (isRecording) {
+        const timestamp = Date.now() - recordingStartTime;
+        recordedBeats.push({ soundName, timestamp });
+        console.log(`Recorded: ${soundName} at ${timestamp}ms`);
+    }
+}
