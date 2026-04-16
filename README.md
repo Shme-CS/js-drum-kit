@@ -302,3 +302,74 @@ js-drum-kit/
 | `assets/sounds/` | Audio files for drum sounds |
 | `assets/screenshots/` | Project screenshots for documentation |
 
+
+## 🏗️ Code Architecture
+
+### Modular Design
+
+The application is organized into logical modules for maintainability:
+
+```javascript
+// 1. Constants & Configuration
+const ANIMATION_DURATION = 150;
+const KEY_MAP = { 'a': 'kick', ... };
+const SOUND_PACKS = { classic: {...}, ... };
+
+// 2. State Management
+const state = {
+    masterVolume: 0.8,
+    currentSoundPack: 'classic',
+    isRecording: false,
+    recordedBeats: []
+};
+
+// 3. Audio Manager Module
+const AudioManager = {
+    playSound(soundName) { ... },
+    setMasterVolume(volume) { ... }
+};
+
+// 4. Visual Feedback Module
+const VisualFeedback = {
+    trigger(soundName) { ... },
+    addPlayingAnimation(element) { ... }
+};
+
+// 5. Recording Manager Module
+const RecordingManager = {
+    startRecording() { ... },
+    playRecording() { ... }
+};
+
+// 6. Sound Pack Manager Module
+const SoundPackManager = {
+    switchPack(packName) { ... }
+};
+
+// 7. Event Handlers Module
+const EventHandlers = {
+    handleDrumClick(event) { ... },
+    handleKeyPress(event) { ... }
+};
+
+// 8. Initializer Module
+const Initializer = {
+    initAll() { ... }
+};
+```
+
+### Design Patterns
+
+- **Module Pattern** - Encapsulation and organization
+- **Observer Pattern** - Event-driven architecture
+- **Singleton Pattern** - Single state object
+- **Factory Pattern** - Sound pack creation
+
+### Performance Optimizations
+
+1. **Audio Playback** - Reset `currentTime` instead of creating new objects
+2. **Animation** - Force reflow for smooth restart
+3. **Event Delegation** - Single listener per control type
+4. **State Management** - Centralized state reduces complexity
+5. **DOM Queries** - Cached selectors where possible
+
