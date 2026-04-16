@@ -92,6 +92,7 @@ function handleKeyPress(event) {
     const soundName = keyMap[key];
     
     if (soundName) {
+        console.log(`Key pressed: ${key}`);
         const pad = document.querySelector(`[data-key="${key}"]`);
         if (pad) {
             playSound(soundName);
