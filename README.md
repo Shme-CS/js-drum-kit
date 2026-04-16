@@ -125,3 +125,71 @@ JavaScript Drum Kit is a feature-rich, browser-based drum machine that allows us
 - VS Code - Code editor
 - Chrome DevTools - Debugging and testing
 
+
+## 📦 Installation
+
+### Prerequisites
+
+- A modern web browser (Chrome, Firefox, Safari, Edge)
+- Basic understanding of HTML/CSS/JavaScript (for development)
+
+### Quick Start
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Shme-CS/js-drum-kit.git
+   ```
+
+2. **Navigate to the project directory**
+   ```bash
+   cd js-drum-kit
+   ```
+
+3. **Open in browser**
+   ```bash
+   # Simply open index.html in your browser
+   # Or use a local server (recommended)
+   ```
+
+### Using a Local Server
+
+#### Option 1: Python
+```bash
+# Python 3
+python -m http.server 8000
+
+# Python 2
+python -m SimpleHTTPServer 8000
+```
+
+#### Option 2: Node.js (http-server)
+```bash
+npx http-server
+```
+
+#### Option 3: VS Code Live Server
+- Install Live Server extension
+- Right-click on `index.html`
+- Select "Open with Live Server"
+
+Then visit `http://localhost:8000` (or the port shown)
+
+### Adding Sound Files
+
+The project requires drum sound files. Place MP3 files in:
+
+```
+assets/sounds/
+├── kick.mp3
+├── snare.mp3
+├── hihat.mp3
+├── tom.mp3
+├── clap.mp3
+└── ride.mp3
+```
+
+**Free Sound Resources:**
+- [Freesound.org](https://freesound.org/)
+- [SampleSwap](https://sampleswap.org/)
+- [99Sounds](https://99sounds.org/)
+
