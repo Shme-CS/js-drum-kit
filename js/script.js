@@ -151,3 +151,35 @@ function initVolumeControl() {
         });
     }
 }
+
+/**
+ * Sound pack configurations
+ */
+const soundPacks = {
+    classic: {
+        kick: 'assets/sounds/kick.mp3',
+        snare: 'assets/sounds/snare.mp3',
+        hihat: 'assets/sounds/hihat.mp3',
+        tom: 'assets/sounds/tom.mp3',
+        clap: 'assets/sounds/clap.mp3',
+        ride: 'assets/sounds/ride.mp3'
+    },
+    electronic: {
+        kick: 'assets/sounds/electronic/kick.mp3',
+        snare: 'assets/sounds/electronic/snare.mp3',
+        hihat: 'assets/sounds/electronic/hihat.mp3',
+        tom: 'assets/sounds/electronic/tom.mp3',
+        clap: 'assets/sounds/electronic/clap.mp3',
+        ride: 'assets/sounds/electronic/ride.mp3'
+    },
+    acoustic: {
+        kick: 'assets/sounds/acoustic/kick.mp3',
+        snare: 'assets/sounds/acoustic/snare.mp3',
+        hihat: 'assets/sounds/acoustic/hihat.mp3',
+        tom: 'assets/sounds/acoustic/tom.mp3',
+        clap: 'assets/sounds/acoustic/clap.mp3',
+        ride: 'assets/sounds/acoustic/ride.mp3'
+    }
+};
+
+let currentSoundPack = 'classic';
