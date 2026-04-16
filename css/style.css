@@ -212,3 +212,25 @@ h1 {
     color: rgba(255, 255, 255, 1);
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
+
+/* Tablet Breakpoint (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    body {
+        padding: 1.5rem;
+    }
+    
+    .drum-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.2rem;
+        max-width: 700px;
+    }
+    
+    .drum-pad {
+        min-height: 140px;
+    }
+    
+    .controls-panel {
+        gap: 1.5rem;
+        padding: 1.2rem;
+    }
+}
