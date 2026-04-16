@@ -102,3 +102,6 @@ function handleKeyPress(event) {
 
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', initDrumKit);
+
+// Listen for keyboard events
+document.addEventListener('keydown', handleKeyPress);
