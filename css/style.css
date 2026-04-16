@@ -234,3 +234,50 @@ h1 {
         padding: 1.2rem;
     }
 }
+
+/* Mobile Breakpoint (max-width: 768px) */
+@media (max-width: 768px) {
+    body {
+        padding: 0.75rem;
+    }
+    
+    h1 {
+        margin-bottom: 0.5rem;
+    }
+    
+    .instructions {
+        margin-bottom: 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .controls-panel {
+        flex-direction: column;
+        gap: 0.8rem;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .control-group {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    #volume-slider {
+        width: 150px;
+    }
+    
+    .control-btn {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .drum-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+    
+    .drum-pad {
+        min-height: 110px;
+        padding: 1.2rem;
+    }
+}
