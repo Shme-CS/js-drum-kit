@@ -2,6 +2,13 @@
 
 A interactive drum kit built with vanilla JavaScript.
 
+## Features
+
+- 6 different drum sounds (Kick, Snare, Hi-hat, Tom, Clap, Ride)
+- Click interaction with visual feedback
+- Responsive design for all devices
+- Smooth animations and transitions
+
 ## Project Structure
 
 ```
@@ -28,10 +35,31 @@ js-drum-kit/
 1. Clone the repository
 2. Add drum sound files to `assets/sounds/` (see assets/sounds/README.md for sources)
 3. Open `index.html` in your browser
-4. Click on drum pads or use keyboard keys to play drums!
+4. Click on drum pads to play drums!
+
+## How to Use
+
+- **Click** on any drum pad to play the corresponding sound
+- Each pad shows the keyboard key and drum name
+- Visual feedback shows when a pad is activated
 
 ## Technologies Used
 
 - HTML5
-- CSS3
+- CSS3 (Grid Layout, Animations)
 - JavaScript (ES6+)
+- Web Audio API
+
+## Browser Support
+
+Works on all modern browsers that support:
+- CSS Grid
+- ES6 JavaScript
+- HTML5 Audio
+
+## Future Enhancements
+
+- Keyboard interaction
+- Recording and playback
+- Volume controls
+- Different drum kits
